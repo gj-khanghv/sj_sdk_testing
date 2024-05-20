@@ -45,11 +45,8 @@ final sdk = SjSdkTesting();
 Access all methods from `sdk` variable:
 
 ```dart
-await
-sdk.signIn
-();await
-sdk.signUp
-();
+await sdk.signIn();
+await sdk.signUp();
 ```
 
 

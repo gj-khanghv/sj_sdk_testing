@@ -6,3 +6,5 @@
 * Update flutter package document v2
 ## 0.0.4
 * Update flutter package document v3
+## 0.0.5
+* Update flutter package document v4
