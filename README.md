@@ -31,6 +31,8 @@ minSdkVersion 26
 
 ### IOS
 
+Not implemented
+
 ## Using
 
 Instantiate `SjSdkTesting` object:
@@ -43,8 +45,11 @@ final sdk = SjSdkTesting();
 Access all methods from `sdk` variable:
 
 ```dart
-await sdk.signIn();
-await sdk.signUp();
+await
+sdk.signIn
+();await
+sdk.signUp
+();
 ```
 
 

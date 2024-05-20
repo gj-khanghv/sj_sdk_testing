@@ -1,6 +1,6 @@
 name: sj_sdk_testing
 description: A SDK to access XXX services such as login, sign-up, point exchange, ext..
-version: 0.0.3
+version: 0.0.4
 repository: https://github.com/gj-khanghv/sj_sdk_testing
 
 environment:
