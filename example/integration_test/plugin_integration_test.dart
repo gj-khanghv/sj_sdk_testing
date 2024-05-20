@@ -10,13 +10,11 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 
-import 'package:sj_sdk_testing/sj_sdk_testing.dart';
-
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
   testWidgets('getPlatformVersion test', (WidgetTester tester) async {
-    final SjSdkTesting plugin = SjSdkTesting();
+    // final SjSdkTesting plugin = await SjSdkTesting.init();
     // The version string depends on the host platform running the test, so
     // just assert that some non-empty string is returned.
   });

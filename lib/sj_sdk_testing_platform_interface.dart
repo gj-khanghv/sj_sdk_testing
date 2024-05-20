@@ -17,6 +17,14 @@ abstract class SjSdkTestingPlatform extends PlatformInterface {
     _instance = instance;
   }
 
+  Future<bool> get isInitialized async {
+    throw UnimplementedError('isInitialized has not been implemented.');
+  }
+
+  Future<bool> initEnvironment(String env) {
+    throw UnimplementedError('initEnvironment() has not been implemented.');
+  }
+
   Future<AuthModel> signIn() {
     throw UnimplementedError('signIn() has not been implemented.');
   }

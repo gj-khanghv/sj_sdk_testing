@@ -35,18 +35,18 @@ Not implemented
 
 ## Using
 
-Instantiate `SjSdkTesting` object:
+Initialized `SjSdkTesting` while provide environments:
 
 ```dart
-
-final sdk = SjSdkTesting();
+/// env: dev, stg, uat, prod
+final sdk = SjSdkTesting.init(env);
 ```
 
-Access all methods from `sdk` variable:
+Access all methods from `SjSdkTesting.instance` singleton:
 
 ```dart
-await sdk.signIn();
-await sdk.signUp();
+await SjSdkTesting.instance.signIn();
+await SjSdkTesting.instance.signUp();
 ```
 
 

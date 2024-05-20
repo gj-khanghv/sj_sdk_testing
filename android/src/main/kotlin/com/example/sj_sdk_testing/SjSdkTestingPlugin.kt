@@ -22,7 +22,7 @@ class SjSdkTestingPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, Plugi
   /// when the Flutter Engine is detached from the Activity
   private lateinit var channel : MethodChannel
   private var activity: android.app.Activity? = null
-  private val androidSDK = AndroidSDK()
+  private lateinit var androidSDK: AndroidSDK
   private var _result: Result? = null
 
   override fun onAttachedToEngine(flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
@@ -33,6 +33,14 @@ class SjSdkTestingPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, Plugi
   override fun onMethodCall(call: MethodCall, result: Result) {
     _result = result
     when (call.method) {
+      "initEnv" -> {
+        val env = call.argument<String>("env") ?: ""
+        androidSDK = AndroidSDK(env = env)
+        result.success(true)
+      }
+      "isInit" -> {
+        result.success(::androidSDK.isInitialized)
+      }
       "signIn" -> {
         androidSDK.signIn(activity)
       }

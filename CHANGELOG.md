@@ -8,3 +8,6 @@
 * Update flutter package document v3
 ## 0.0.5
 * Update flutter package document v4
+## 0.0.6
+* Update flutter package document v5
+* Add environment implementation

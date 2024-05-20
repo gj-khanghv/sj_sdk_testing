@@ -5,7 +5,8 @@ import 'package:flutter/services.dart';
 import 'package:sj_sdk_testing/model/auth_model.dart';
 import 'package:sj_sdk_testing/sj_sdk_testing.dart';
 
-void main() {
+void main() async {
+  await SjSdkTesting.init();
   runApp(const MyApp());
 }
 
@@ -18,7 +19,6 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   AuthModel? authModel;
-  final _sjSdkTestingPlugin = SjSdkTesting();
 
   @override
   void initState() {
@@ -30,8 +30,9 @@ class _MyAppState extends State<MyApp> {
     AuthModel? model;
     try {
       model =
-          await _sjSdkTestingPlugin.signIn();
+          await SjSdkTesting.instance.signIn();
     } on PlatformException {
+      //ignore
     }
 
     if (!mounted) return;

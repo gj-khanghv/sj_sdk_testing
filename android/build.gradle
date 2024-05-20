@@ -71,5 +71,5 @@ android {
 }
 
 dependencies {
-    implementation("com.github.gj-khanghv:android-sdk-testing:release-10")
+    implementation("com.github.gj-khanghv:android-sdk-testing:release-11")
 }

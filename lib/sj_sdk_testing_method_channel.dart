@@ -9,6 +9,18 @@ class MethodChannelSjSdkTesting extends SjSdkTestingPlatform {
   final methodChannel = const MethodChannel('sj_sdk_testing');
 
   @override
+  Future<bool> get isInitialized async {
+    return await methodChannel.invokeMethod<bool>('isInit') ?? false;
+  }
+
+  @override
+  Future<bool> initEnvironment(String env) async {
+    return await methodChannel.invokeMethod<bool>('initEnv', {
+      "env": env,
+    }) ?? false;
+  }
+
+  @override
   Future<AuthModel> signIn() async {
     final map = await methodChannel.invokeMethod<Map>('signIn');
     return AuthModel(
