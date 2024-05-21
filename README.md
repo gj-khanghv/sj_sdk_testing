@@ -35,11 +35,29 @@ Not implemented
 
 ## Using
 
-Initialized `SjSdkTesting` while provide environments:
+Initialized `SjSdkTesting` while provide config:
 
 ```dart
-/// env: dev, stg, uat, prod
-final sdk = SjSdkTesting.init(env);
+final config = SjConfig(
+  clientId: <provide-your-clientid>,
+  language: Language.en,
+  environment: Environment.stg,
+);
+await SjSdkTesting.init(config);
+```
+
+All available languages:
+```dart
+Language.vn
+Language.en
+```
+
+All supported environments:
+```dart
+Environment.dev
+Environment.stg
+Environment.uat /// (default)
+Environment.prod
 ```
 
 Access all methods from `SjSdkTesting.instance` singleton:

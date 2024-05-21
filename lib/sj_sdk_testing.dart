@@ -1,8 +1,7 @@
 import 'package:sj_sdk_testing/model/auth_model.dart';
+import 'package:sj_sdk_testing/model/sj_config.dart';
 
 import 'sj_sdk_testing_platform_interface.dart';
-
-enum Environment { dev, stg, uat, prod }
 
 class SjSdkTesting {
   SjSdkTesting._internal();
@@ -10,9 +9,9 @@ class SjSdkTesting {
   static final SjSdkTesting instance = SjSdkTesting._internal();
 
   static Future<bool> init({
-    Environment env = Environment.uat,
+    required SjConfig config,
   }) async {
-    final isInitSuccess = await SjSdkTestingPlatform.instance.initEnvironment(env.toString());
+    final isInitSuccess = await SjSdkTestingPlatform.instance.initEnvironment(config.environment.toString());
     return isInitSuccess;
   }
 

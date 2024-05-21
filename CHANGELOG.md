@@ -11,3 +11,7 @@
 ## 0.0.6
 * Update flutter package document v5
 * Add environment implementation
+## 0.0.7
+* Update flutter package document v6
+## 0.0.8
+* Update flutter package document v7
