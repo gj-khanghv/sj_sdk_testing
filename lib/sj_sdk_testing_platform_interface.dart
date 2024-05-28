@@ -32,4 +32,12 @@ abstract class SjSdkTestingPlatform extends PlatformInterface {
   Future<AuthModel> signUp() {
     throw UnimplementedError('signUp() has not been implemented.');
   }
+
+  Future<void> pointExchange() {
+    throw UnimplementedError('pointExchange() has not been implemented.');
+  }
+
+  Future<void> flightRedemption(String token) {
+    throw UnimplementedError('flightRedemption() has not been implemented.');
+  }
 }

@@ -47,6 +47,13 @@ class SjSdkTestingPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, Plugi
       "signUp" -> {
         androidSDK.signUp(activity)
       }
+      "pointExchange" -> {
+        androidSDK.pointExchange(activity)
+      }
+      "flightRedemption" -> {
+        val token = call.argument<String>("token") ?: ""
+        androidSDK.flightRedemption(activity, token)
+      }
       else -> result.success("else")
     }
   }

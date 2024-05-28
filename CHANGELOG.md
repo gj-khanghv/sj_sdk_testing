@@ -15,3 +15,5 @@
 * Update flutter package document v6
 ## 0.0.8
 * Update flutter package document v7
+## 0.0.9
+* Update sdk to release-12

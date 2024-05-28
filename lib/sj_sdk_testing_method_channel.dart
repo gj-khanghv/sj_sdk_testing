@@ -39,4 +39,16 @@ class MethodChannelSjSdkTesting extends SjSdkTestingPlatform {
       expiredTime: map?['expired'] ?? "",
     );
   }
+
+  @override
+  Future<void> pointExchange() async {
+    await methodChannel.invokeMethod('pointExchange');
+  }
+
+  @override
+  Future<void> flightRedemption(String token) async {
+    await methodChannel.invokeMethod('flightRedemption', {
+      "token": token,
+    });
+  }
 }

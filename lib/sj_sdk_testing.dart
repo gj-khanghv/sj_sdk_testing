@@ -32,4 +32,20 @@ class SjSdkTesting {
     );
     return SjSdkTestingPlatform.instance.signUp();
   }
+
+  Future<void> pointExchange() async {
+    assert(
+    await SjSdkTestingPlatform.instance.isInitialized,
+    "Please call SjSdkTesting.init() before using this method",
+    );
+    return SjSdkTestingPlatform.instance.pointExchange();
+  }
+
+  Future<void> flightRedemption(String token) async {
+    assert(
+    await SjSdkTestingPlatform.instance.isInitialized,
+    "Please call SjSdkTesting.init() before using this method",
+    );
+    return SjSdkTestingPlatform.instance.flightRedemption(token);
+  }
 }
