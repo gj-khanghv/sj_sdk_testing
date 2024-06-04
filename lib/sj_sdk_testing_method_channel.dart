@@ -65,7 +65,7 @@ class MethodChannelSjSdkTesting extends SjSdkTestingPlatform {
         return map;
       }
       throw Exception("user not found");
-    } on PlatformException catch (e) {
+    } on PlatformException catch (_) {
       throw Exception("user not found");
     } catch (e) {
       throw Exception("raw data parse failed: ${e.toString()}");

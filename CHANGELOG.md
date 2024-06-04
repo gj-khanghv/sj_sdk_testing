@@ -21,3 +21,7 @@
 * Hotfix for release-12
 ## 0.0.11
 * Add new api: userProfile
+## 0.0.12
+* hotfix release-14
+## 0.0.13
+* hotfix release-15

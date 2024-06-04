@@ -63,8 +63,9 @@ Environment.prod
 Access all methods from `SjSdkTesting.instance` singleton:
 
 ```dart
-await SjSdkTesting.instance.signIn();
+final token = await SjSdkTesting.instance.signIn();
 await SjSdkTesting.instance.signUp();
+await SjSdkTesting.instance.pointExchange();
+await SjSdkTesting.instance.flightRedemption(token);
+user = await SjSdkTesting.instance.userProfile(token);
 ```
-
-Test commit
