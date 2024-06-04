@@ -3,6 +3,7 @@ package com.example.sj_sdk_testing
 import android.app.Activity
 import android.content.Intent
 import android.util.Log
+import com.google.gson.Gson
 import io.flutter.plugin.common.PluginRegistry
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
@@ -53,6 +54,16 @@ class SjSdkTestingPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, Plugi
       "flightRedemption" -> {
         val token = call.argument<String>("token") ?: ""
         androidSDK.flightRedemption(activity, token)
+      }
+      "userProfile" -> {
+        val token = call.argument<String>("token") ?: ""
+        androidSDK.userProfile(token) { userNullable ->
+          userNullable?.let { user ->
+            val gson = Gson()
+            val jsonString = gson.toJson(user)
+            result.success(jsonString)
+          } ?: result.error("USER_NOT_FOUND", "user not found", null)
+        }
       }
       else -> result.success("else")
     }

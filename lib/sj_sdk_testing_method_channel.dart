@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:sj_sdk_testing/model/auth_model.dart';
@@ -50,5 +52,23 @@ class MethodChannelSjSdkTesting extends SjSdkTestingPlatform {
     await methodChannel.invokeMethod('flightRedemption', {
       "token": token,
     });
+  }
+
+  @override
+  Future<Map<String, dynamic>> userProfile(String token) async {
+    try {
+      final raw = await methodChannel.invokeMethod<String>('userProfile', {
+        "token": token,
+      });
+      if (raw != null) {
+        final map = jsonDecode(raw);
+        return map;
+      }
+      throw Exception("user not found");
+    } on PlatformException catch (e) {
+      throw Exception("user not found");
+    } catch (e) {
+      throw Exception("raw data parse failed: ${e.toString()}");
+    }
   }
 }

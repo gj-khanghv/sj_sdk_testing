@@ -40,4 +40,8 @@ abstract class SjSdkTestingPlatform extends PlatformInterface {
   Future<void> flightRedemption(String token) {
     throw UnimplementedError('flightRedemption() has not been implemented.');
   }
+
+  Future<Map<String, dynamic>> userProfile(String token) {
+    throw UnimplementedError('userProfile() has not been implemented.');
+  }
 }

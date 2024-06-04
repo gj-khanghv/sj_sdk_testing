@@ -1,4 +1,13 @@
-enum Environment { dev, stg, uat, prod }
+enum Environment {
+  dev("dev"),
+  stg("stg"),
+  uat("uat"),
+  prod("prod");
+
+  final String name;
+
+  const Environment(this.name);
+}
 
 enum Language { en, vn }
 

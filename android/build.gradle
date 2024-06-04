@@ -71,5 +71,6 @@ android {
 }
 
 dependencies {
-    implementation("com.github.gj-khanghv:android-sdk-testing:release-12")
+    implementation("com.github.gj-khanghv:android-sdk-testing:release-13")
+    implementation("com.google.code.gson:gson:2.10.1")
 }

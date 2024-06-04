@@ -11,7 +11,7 @@ class SjSdkTesting {
   static Future<bool> init({
     required SjConfig config,
   }) async {
-    final isInitSuccess = await SjSdkTestingPlatform.instance.initEnvironment(config.environment.toString());
+    final isInitSuccess = await SjSdkTestingPlatform.instance.initEnvironment(config.environment.name);
     return isInitSuccess;
   }
 
@@ -35,17 +35,25 @@ class SjSdkTesting {
 
   Future<void> pointExchange() async {
     assert(
-    await SjSdkTestingPlatform.instance.isInitialized,
-    "Please call SjSdkTesting.init() before using this method",
+      await SjSdkTestingPlatform.instance.isInitialized,
+      "Please call SjSdkTesting.init() before using this method",
     );
     return SjSdkTestingPlatform.instance.pointExchange();
   }
 
   Future<void> flightRedemption(String token) async {
     assert(
-    await SjSdkTestingPlatform.instance.isInitialized,
-    "Please call SjSdkTesting.init() before using this method",
+      await SjSdkTestingPlatform.instance.isInitialized,
+      "Please call SjSdkTesting.init() before using this method",
     );
     return SjSdkTestingPlatform.instance.flightRedemption(token);
+  }
+
+  Future<Map<String, dynamic>> userProfile(String token) async {
+    assert(
+      await SjSdkTestingPlatform.instance.isInitialized,
+      "Please call SjSdkTesting.init() before using this method",
+    );
+    return SjSdkTestingPlatform.instance.userProfile(token);
   }
 }
